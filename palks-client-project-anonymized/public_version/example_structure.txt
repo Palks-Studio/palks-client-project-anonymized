@@ -1,0 +1,171 @@
+```
+project_structure/
+│
+├── css/
+│   └── style.css                          → Feuille de style principale (mobile + desktop) FR
+│                                          → Main stylesheet (mobile + desktop) EN
+├── data/
+│   └── content.json                       → Structure interne de données (JSON) FR
+│                                          → Internal data structure (JSON) EN
+├── html/
+│   ├── pages/
+│   │   ├── page01.html                    → Page interne 1 (exemple anonymisé) FR
+│   │   │                                  → Internal page 1 (anonymized example) EN
+│   │   │
+│   │   ├── page02.html                    → Page interne 2 (exemple anonymisé) FR
+│   │   │                                  → Internal page 2 (anonymized example) EN
+│   │   │
+│   │   ├── page03.html                    → Page interne 3 (exemple anonymisé) FR
+│   │   │                                  → Internal page 3 (anonymized example) EN
+│   │   │
+│   │   ├── page04.html                    → Page interne 4 (exemple anonymisé) FR
+│   │   │                                  → Internal page 4 (anonymized example) EN
+│   │   │
+│   │   ├── page05.html                    → Page interne 5 (exemple anonymisé) FR
+│   │   │                                  → Internal page 5 (anonymized example) EN
+│   │   │
+│   │   ├── page06.html                    → Page interne 6 (exemple anonymisé) FR
+│   │   │                                  → Internal page 6 (anonymized example) EN
+│   │   │
+│   │   ├── page07.html                    → Page interne 7 (exemple anonymisé) FR
+│   │   │                                  → Internal page 7 (anonymized example) EN
+│   │   │
+│   │   ├── page08.html                    → Page interne 8 (exemple anonymisé) FR
+│   │   │                                  → Internal page 8 (anonymized example) EN
+│   │   │
+│   │   ├── page09.html                    → Page interne 9 (exemple anonymisé) FR
+│   │   │                                  → Internal page 9 (anonymized example) EN
+│   │   │
+│   │   ├── page10.html                    → Page interne 10 (exemple anonymisé) FR
+│   │   │                                  → Internal page 10 (anonymized example) EN
+│   │   │
+│   │   ├── page11.html                    → Page interne 11 (exemple anonymisé) FR
+│   │   │                                  → Internal page 11 (anonymized example) EN
+│   │   │
+│   │   ├── page12.html                    → Page interne 12 (exemple anonymisé) FR
+│   │   │                                  → Internal page 12 (anonymized example) EN
+│   │   │
+│   │   └── page13.html                    → Page interne 13 (exemple anonymisé) FR
+│   │                                      → Internal page 13 (anonymized example) EN
+│   │
+│   ├── index.html                         → Page d’accueil (exemple) FR
+│   │                                      → Homepage (example) EN
+│   │
+│   ├── page14.html                        → Page 14 (exemple anonymisé) FR
+│   │                                      → Page 14 (anonymized example) EN
+│   │
+│   ├── page15.html                        → Page 15 (exemple anonymisé) FR
+│   │                                      → Page 15 (anonymized example) EN
+│   │
+│   ├── page16.html                        → Page 16 (exemple anonymisé) FR
+│   │                                      → Page 16 (anonymized example) EN
+│   │
+│   ├── page17.html                        → Page 17 (exemple anonymisé) FR
+│   │                                      → Page 17 (anonymized example) EN
+│   │
+│   ├── page18.html                        → Page 18 (exemple anonymisé) FR
+│   │                                      → Page 18 (anonymized example) EN
+│   │
+│   ├── cgv.html                           → Conditions générales de vente (example) FR
+│   │                                      → Terms & Conditions (example) EN
+│   │
+│   ├── page19.html                        → Page 19 (exemple anonymisé) FR
+│   │                                      → Page 19 (anonymized example) EN
+│   │
+│   ├── contact.html                       → Page de contact / support (exemple) FR
+│   │                                      → Contact / Support page (example) EN
+│   │
+│   ├── page20.html                        → Page 20 (exemple anonymisé) FR
+│   │                                      → Page 20 (anonymized example) EN
+│   │
+│   ├── faq.html                           → Foire aux questions (exemple) FR
+│   │                                      → FAQ page (example) EN
+│   │
+│   ├── page21.html                        → Page 21 (exemple anonymisé) FR
+│   │                                      → Page 21 (anonymized example) EN
+│   │
+│   ├── mentions_legales.html              → Mentions légales (exemple) FR
+│   │                                      → Legal Notice (example) EN
+│   │
+│   ├── page22.html                        → Page 22 (exemple anonymisé) FR
+│   │                                      → Page 22 (anonymized example) EN
+│   │
+│   ├── parrainage.html                    → Programme de parrainage (exemple) FR
+│   │                                      → Referral Program (example) EN
+│   │
+│   ├── politique_confidentialite.html     → Politique de confidentialité (exemple) FR
+│   │                                      → Privacy Policy (example) EN
+│   │
+│   ├── page23.html                        → Page 23 (exemple anonymisé) FR
+│   │                                      → Page 23 (anonymized example) EN
+│   │
+│   ├── qui_sommes_nous.html               → À propos (exemple) FR
+│   │                                      → About page (example) EN
+│   │
+│   ├── page24.html                        → Page 24 (exemple anonymisé) FR
+│   │                                      → Page 24 (anonymized example) EN
+│   │
+│   ├── page25.html                        → Page 25 (exemple anonymisé) FR
+│   │                                      → Page 25 (anonymized example) EN
+│   │
+│   └── signature.html                     → Signature HTML interne (email) FR
+│                                          → Internal HTML signature (email) EN
+├── images/
+│   ├── favicons/                          → Icônes publiques (favicon) FR
+│   │                                      → Public icons (favicon) EN
+│   └── logos/
+│       ├── logo.jpg                       → Logo principal (anonymisé) FR
+│       │                                  → Main logo (anonymized) EN
+│       │
+│       └── social-preview.png             → Image OpenGraph (exemple) FR
+│                                          → OpenGraph preview image (example) EN
+├── js/
+│   ├── script_ui.js                       → Interactions / UI (exemple) FR
+│   │                                      → UI / interactions (example) EN
+│   │
+│   ├── script_carousel.js                 → Gestion des carrousels (exemple) FR
+│   │                                      → Carousel logic (example) EN
+│   │
+│   └── script_faq.js                      → FAQ dynamique (exemple) FR
+│                                          → Dynamic FAQ (example) EN
+├── logs/
+│   └── interactions.txt                   → Fichier de logs (exemple) FR
+│                                          → Test log file (example) EN
+├── pdf/
+│   └── .htaccess                          → Protection d’accès (exemple) FR
+│                                          → Access restriction (example) EN
+├── docs/
+│   └── README_BOT.md                      → Documentation technique (anonymisée) FR
+│                                          → Technical documentation (anonymized) EN
+│
+├── app.py                                 → API Flask (exemple) FR
+│                                          → Flask API (example) EN
+│
+├── LICENSE.txt                            → Licence d’usage (exemple) FR
+│                                          → Usage license (example) EN
+│
+├── main.py                                → Cœur du moteur (anonymisé) FR
+│                                          → Core engine (anonymized) EN
+│
+├── config.json                            → Configuration interne (exemple) FR
+│                                          → Internal configuration (example) EN
+│
+├── tokens.json                            → Jetons internes (exemple) FR
+│                                          → Internal tokens (example) EN
+│
+├── mail_assistant.py                      → Assistant email interne (exemple) FR
+│                                          → Internal email assistant (example) EN
+│
+├── paiement_webhook.php                   → Webhook Stripe (exemple) FR
+│                                          → Stripe webhook (example) EN
+│
+├── telechargement.php                     → Gestion des téléchargements (exemple) FR
+│                                          → Download handler (example) EN
+│
+├── send_avis.php                          → Envoi d’avis (exemple) FR
+│                                          → Feedback sender (example) EN
+│
+└── server_wsgi.py                         → Entrée WSGI / Passenger (anonymisé) FR
+                                           → WSGI / Passenger entry point (anonymized) EN
+
+```
