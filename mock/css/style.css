@@ -1,1 +1,32 @@
 
+/* =========================================
+Basic anonymized stylesheet example
+Palks Studio — Mock file
+========================================= */
+
+:root {
+    --color-bg: #f7f7f7;
+    --color-text: #222;
+    --color-primary: #0a5645;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: 20px;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.block {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
