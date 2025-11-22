@@ -5,7 +5,6 @@
 # Anonymized Client Web Project — Palks Studio  
 
 **FR/EN — Technical Showcase (HTML/CSS/JS + Python/Flask)**
-
 Ce dépôt présente une **architecture de projet client entièrement anonymisée**, conçue et structurée par **Palks Studio**.
 Il illustre la manière dont un projet complet peut être organisé, documenté et structuré techniquement, tout en respectant la confidentialité absolue du client.
 
@@ -158,4 +157,4 @@ Simplicity, clarity, efficiency.
 - Discord: https://discord.gg/kzrSyThyZ7  
 - Twitter (X): https://x.com/PalksStudio  
 - Itch.io: http://palks-studio.itch.io  
-- Ko-Fi: https://ko-fi.com/palksstudio
+- Ko-fi: https://ko-fi.com/palksstudio
