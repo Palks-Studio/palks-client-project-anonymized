@@ -63,7 +63,7 @@ Structure du projet totalement anonymisée (FR/EN), inspirée de l’architectur
 
 ## Contenu du dépôt
 
-Ce dépôt contient :
+Ce dépôt contient :  
 
 - `mock/` → fichiers d'exemple (HTML, CSS, JS)  
 - `docs/` → documentation anonymisée  
@@ -98,7 +98,7 @@ Ce dépôt contient :
 
 ## Anonymisation
 
-Pour protéger le projet client :
+Pour protéger le projet client :  
 
 - tous les noms de fichiers réels ont été remplacés  
 - aucune donnée, logique, image ou contenu du projet initial n’est présent  
@@ -118,7 +118,7 @@ It demonstrates how a full web platform can be architected and documented while 
 
 ## Project Purpose
 
-This repository contains **no real client files**, but showcases:
+This repository contains **no real client files**, but showcases:  
 
 - a realistic HTML/CSS/JS architecture  
 - an anonymized Flask backend structure  
@@ -163,7 +163,7 @@ Fully anonymized project structure (FR/EN), inspired by the real architecture.
 
 ## Repository Contents
 
-This repository includes:
+This repository includes:  
 
 - `mock/` → example files (HTML, CSS, JS)  
 - `docs/` → anonymized documentation  
@@ -198,7 +198,7 @@ This repository includes:
 
 ## Confidentiality
 
-To protect the client project:
+To protect the client project:  
 
 - all real filenames have been replaced  
 - no real content, assets, or logic is included  
