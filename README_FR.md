@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/badge/License-LICENSE.txt-lightgreen.svg)
 
-# 🇫🇷  Présentation du projet
+# Présentation du projet
 
 Ce dépôt présente l’architecture complète d’un site web orienté bien-être naturel,
 conçu sans CMS, sans SaaS, sans cookies et sans backend exposé.
