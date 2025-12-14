@@ -382,19 +382,12 @@ requiring minimal maintenance and reducing the attack surface.
 
 This project is an original creation by **Palks Studio**.
 
-The code and architecture presented in this repository are provided
-for technical demonstration and portfolio purposes.
-Any reuse, redistribution, or public exploitation without prior authorization is not permitted.
+The code, structure, and architecture presented in this repository
+are provided for technical demonstration and portfolio purposes.
 
-Personal and professional use for evaluation, study, or inspiration is allowed.
+Any direct reuse, redistribution, or public exploitation
+of all or part of this project, in any form,
+is prohibited without prior written permission.
 
-See the LICENSE file for terms of use.
-
-**Palks Studio**  
-Independent creator of autonomous and sustainable digital tools.
-
-- GitHub: https://github.com/Palks-Studio  
-- Gumroad: https://palks.gumroad.com  
-- Itch.io: http://palks-studio.itch.io  
-- Ko-fi: https://ko-fi.com/palksstudio  
-- Twitter (X): https://x.com/Palks_Studio
+Study, analysis, and inspiration for personal
+or professional purposes are permitted.
