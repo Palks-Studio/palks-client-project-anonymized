@@ -2,9 +2,9 @@
   <img src="docs/images/Palks_Studio.png" alt="Palks Studio" width="600">
 </p>
 
-![License](https://img.shields.io/badge/License-LICENSE_EN.md-lightgreen.svg)
-
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
+
+![License](https://img.shields.io/badge/License-LICENSE_EN.md-lightgreen.svg)
 
 # Présentation du projet
 
