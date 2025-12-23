@@ -2,6 +2,8 @@
   <img src="docs/images/Palks_Studio.png" alt="Palks Studio" width="600">
 </p>
 
+![License](https://img.shields.io/badge/License-LICENSE_EN.md-lightgreen.svg)
+
 > 🇬🇧 English | [🇫🇷 Français](./README_FR.md)
 
 # Project Overview
@@ -376,19 +378,7 @@ requiring minimal maintenance and reducing the attack surface.
 
 ---
 
-## Credits and License
+## License
 
-This project is an original creation by **Palks Studio**.
-
-The code, structure, and architecture presented in this repository
-are provided for technical demonstration and portfolio purposes.
-
-Any direct reuse, redistribution, or public exploitation
-of all or part of this project, in any form,
-is prohibited without prior written permission.
-
-Study, analysis, and inspiration for personal
-or professional purposes are permitted.
-
-© Palks Studio — 2025  
+© Palks Studio — see LICENSE_EN.md  
 - https://palks-studio.com
