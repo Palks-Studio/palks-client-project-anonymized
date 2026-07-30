@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="docs/images/santeplusai.png"
-       alt="SantéPlusAI homepage — natural wellness program interface and structured weekly guidance"
+  <img src="docs/images/sereona.png"
+       alt="Sereona homepage — natural wellness program interface and structured weekly guidance"
        width="1200">
 </p>
 
@@ -12,8 +12,8 @@
 ![Stack](https://img.shields.io/badge/Stack-HTML%2FCSS%2FJS-0095b1?style=flat)
 
 <p align="center">
-  <a href="https://santeplusai.fr">
-    <img src="https://img.shields.io/badge/SantéPlusAI-Website-0a5645?style=for-the-badge&logoColor=white" />
+  <a href="https://sereona.fr">
+    <img src="https://img.shields.io/badge/Sereona-Website-0a5645?style=for-the-badge&logoColor=white" />
   </a>
 </p>
 
@@ -42,7 +42,7 @@ La séparation présentée dans ce dépôt est logique et fonctionnelle.
 Elle ne reflète pas nécessairement l’implantation physique exacte,  
 qui peut varier selon les contraintes de l’hébergement de production.
 
-Le site est aujourd’hui exploité en production sur https://santeplusai.fr.
+Le site est aujourd’hui exploité en production sur https://sereona.fr.
 
 ---
 
@@ -74,7 +74,7 @@ sur le long terme.
 
 L’architecture repose sur les blocs suivants :  
 
-- `santeplusai.fr/` : site public statique, incluant des points d’entrée serveur protégés  
+- `sereona.fr/` : site public statique, incluant des points d’entrée serveur protégés  
 - `core/` : zone technique exposée minimale (point d’entrée serveur, règles d’accès)  
 - `assistant-node/` : traitements internes asynchrones (bot, automatisation, maintenance)
 
@@ -86,7 +86,7 @@ mais interagit de manière contrôlée avec les autres.
 ## Arborescence du projet
 
 ```
-santeplusai/
+sereona/
 ├── core/
 │    │
 │    ├── data_counter.json             → Compteur de numérotation des factures
@@ -124,7 +124,7 @@ santeplusai/
 │    ├── data/                         → Source de données du worker
 │    └── tmp/                          → Fichier de contrôle / état
 │
-└── santeplusai.fr/
+└── sereona.fr/
      ├── pdf/
      │    ├── template_document.html   → Modèle HTML de facture
      │    ├── success.html             → Page affichée après paiement réussi
@@ -154,9 +154,9 @@ santeplusai/
 
 ---
 
-### `santeplusai.fr/` — site public statique, incluant des points d’entrée serveur protégés
+### `sereona.fr/` — site public statique, incluant des points d’entrée serveur protégés
 
-Ce dossier contient exclusivement le site public : https://santeplusai.fr
+Ce dossier contient exclusivement le site public : https://sereona.fr
 
 Il s’agit d’un site statique composé de fichiers HTML indépendants,  
 accompagnés de feuilles de style et de scripts JavaScript légers.  
