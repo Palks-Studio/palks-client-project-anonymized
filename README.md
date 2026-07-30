@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="docs/images/santeplusai.png"
-       alt="SantéPlusAI homepage — natural wellness program interface and structured weekly guidance"
+  <img src="docs/images/sereona.png"
+       alt="Sereona homepage — natural wellness program interface and structured weekly guidance"
        width="1200">
 </p>
 
@@ -12,8 +12,8 @@
 ![Stack](https://img.shields.io/badge/Stack-HTML%2FCSS%2FJS-0095b1?style=flat)
 
 <p align="center">
-  <a href="https://santeplusai.fr">
-    <img src="https://img.shields.io/badge/SantéPlusAI-Website-0a5645?style=for-the-badge&logoColor=white" />
+  <a href="https://sereona.fr">
+    <img src="https://img.shields.io/badge/Sereona-Website-0a5645?style=for-the-badge&logoColor=white" />
   </a>
 </p>
 
@@ -42,7 +42,7 @@ The separation presented in this repository is logical and functional.
 It does not necessarily reflect the exact physical deployment,  
 which may vary depending on hosting constraints.
 
-The website is currently deployed in production at https://santeplusai.fr
+The website is currently deployed in production at https://sereona.fr
 
 ---
 
@@ -69,7 +69,7 @@ This organization helps minimize the attack surface, clarify responsibilities, a
 
 The architecture is based on the following blocks:  
 
-- `santeplusai.fr/`: public static site, including protected server entry points  
+- `sereona.fr/`: public static site, including protected server entry points  
 - `core/`: minimal exposed technical layer (server entry point, access rules)  
 - `assistant-node/`: asynchronous internal processing (bot, automation, maintenance)
 
@@ -80,7 +80,7 @@ Each subsystem is logically independent but interacts in a controlled manner wit
 ## Project Structure
 
 ```
-santeplusai/
+sereona/
 ├── core/
 │    │
 │    ├── data_counter.json             → Invoice numbering counter
@@ -118,7 +118,7 @@ santeplusai/
 │    ├── data/                         → Worker data source
 │    └── tmp/                          → Control / state file
 │
-└── santeplusai.fr/
+└── sereona.fr/
      ├── pdf/
      │    ├── template_document.html   → Invoice HTML template
      │    ├── success.html             → Page displayed after successful payment
@@ -148,9 +148,9 @@ santeplusai/
 
 ---
 
-### `santeplusai.fr/` — Public Layer
+### `sereona.fr/` — Public Layer
 
-This folder contains exclusively the public site: https://santeplusai.fr
+This folder contains exclusively the public site: https://sereona.fr
 
 It is a static website composed of independent HTML files, accompanied by lightweight CSS stylesheets and JavaScript scripts.  
 No critical server-side logic is exposed from this layer.
