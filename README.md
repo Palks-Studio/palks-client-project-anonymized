@@ -42,7 +42,7 @@ The separation presented in this repository is logical and functional.
 It does not necessarily reflect the exact physical deployment,  
 which may vary depending on hosting constraints.
 
-The website is currently deployed in production at https://sereona.fr
+The website is currently deployed in production at [Sereona](https://sereona.fr)
 
 ---
 
@@ -151,7 +151,7 @@ sereona/
 
 ### `sereona.fr/` — Public Layer
 
-This folder contains exclusively the public site: https://sereona.fr
+This folder contains exclusively the public site: [Sereona](https://sereona.fr)
 
 It is a static website composed of independent HTML files, accompanied by lightweight CSS stylesheets and JavaScript scripts.  
 No critical server-side logic is exposed from this layer.
