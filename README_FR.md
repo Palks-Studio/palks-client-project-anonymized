@@ -117,6 +117,7 @@ sereona/
 │
 ├── assistant-node/
 │    ├── engine_main.py                → Point d’entrée du worker (cron / déclencheur PHP)
+│    ├── app_entry.html                → Page d’entrée statique de l’application Python
 │    ├── engine_core.py                → Logique principale du worker
 │    ├── engine_reply.py               → Traitement automatisé
 │    ├── engine_purge.py               → Maintenance des journaux
@@ -182,6 +183,8 @@ qu'en interne, depuis les scripts et tâches planifiées.
 
 Le dossier `assistant-node/` contient exclusivement les traitements internes  
 exécutés en arrière-plan.
+
+Selon les contraintes de l'hébergement, une application Python minimale peut être déclarée afin de fournir l'environnement d'exécution (wrapper / virtualenv). Elle ne sert pas le moteur de réponse et n'expose aucune API publique.
 
 Il correspond à la partie bot / assistant / automatisation Python  
 du système et n’est jamais exposé publiquement.
