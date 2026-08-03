@@ -111,7 +111,6 @@ sereona/
 │
 ├── assistant-node/
 │    ├── engine_main.py                → Worker entry point (cron / PHP trigger)
-│    ├── app_entry.html                → Static entry page for the Python application
 │    ├── engine_core.py                → Main worker logic
 │    ├── engine_reply.py               → Automated processing
 │    ├── engine_purge.py               → Log maintenance
@@ -179,8 +178,6 @@ internally, from scripts and scheduled tasks.
 
 The `assistant-node/` folder contains internal processes that run in the background, with no public exposure.  
 These scripts are triggered solely via scheduled tasks or internal server calls.
-
-Depending on the hosting platform, a minimal Python application may be registered solely to satisfy the hosting environment and provide the execution wrapper associated with the virtual environment. It is not used to serve the response engine and does not expose any public API.
 
 They handle, among other things:  
 
