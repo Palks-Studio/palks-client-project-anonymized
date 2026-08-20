@@ -124,7 +124,7 @@ sereona/
 │    ├── data/                         → Source de données du worker
 │    └── tmp/                          → Fichier de contrôle / état
 │
-└── sereona.fr/
+└── web/
      ├── pdf/
      │    ├── template_document.html   → Modèle HTML de facture
      │    ├── success.html             → Page affichée après paiement réussi
