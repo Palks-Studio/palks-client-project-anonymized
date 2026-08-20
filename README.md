@@ -118,7 +118,7 @@ sereona/
 │    ├── data/                         → Worker data source
 │    └── tmp/                          → Control / state file
 │
-└── sereona.fr/
+└── web/
      ├── pdf/
      │    ├── template_document.html   → Invoice HTML template
      │    ├── success.html             → Page displayed after successful payment
