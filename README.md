@@ -91,7 +91,7 @@ sereona/
 │    ├── engine_reviews_cleaner.py     → Review cleanup script
 │    ├── engine_emails_cleaner.py      → Email cleanup script
 │    ├── data_senders.json             → Email auto-reply tracker
-│    ├── data_stripe.json              → Stripe duplicate prevention
+│    ├── payment-state.json            → Payment duplicate prevention
 │    ├── engine_downloads_cleaner.php  → Download log cleanup
 │    ├── engine_tokens_cleaner.php     → Expired token cleanup
 │    ├── core_pdf.php                  → PDF generation functions
@@ -134,10 +134,10 @@ sereona/
      │
      ├── site.webmanifest              → Website PWA manifest
      ├── index.html                    → Homepage
-     ├── gateway.php                   → Stripe payment webhook
+     ├── gateway.php                   → Payment webhook
      ├── reviews.php                   → Review submission handler
      ├── download.php                  → Download entry point
-     ├── checkout.php                  → Stripe payment initialization
+     ├── payment-init.php              → Payment initialization
      ├── robots.txt                    → Search engine indexing rules
      ├── sitemap.xml                   → Sitemap for indexing
      ├── hero_loader.js                → Weekly content initialization script
