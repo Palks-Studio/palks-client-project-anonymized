@@ -97,7 +97,7 @@ sereona/
 │    ├── engine_reviews_cleaner.py     → Script de nettoyage des avis
 │    ├── engine_emails_cleaner.py      → Script de nettoyage des mails
 │    ├── data_senders.json             → Suivi des réponses automatiques e-mail
-│    ├── data_stripe.json              → Anti-doublon Stripe
+│    ├── payment-state.json            → Prévention des doublons de paiement
 │    ├── engine_downloads_cleaner.php  → Nettoyage des logs de téléchargements
 │    ├── engine_tokens_cleaner.php     → Nettoyage des jetons expirés
 │    ├── core_pdf.php                  → Fonctions de génération PDF
@@ -140,10 +140,10 @@ sereona/
      │
      ├── site.webmanifest              → Manifest PWA du site
      ├── index.html                    → Page d’accueil
-     ├── gateway.php                   → Webhook de paiement Stripe
+     ├── gateway.php                   → Webhook de paiement
      ├── reviews.php                   → Gestionnaire d’envoi d’avis
      ├── download.php                  → Point d’entrée de téléchargement
-     ├── checkout.php                  → Initialisation du paiement Stripe
+     ├── payment-init.php              → Initialisation du paiement
      ├── robots.txt                    → Règles d’indexation pour les moteurs de recherche
      ├── sitemap.xml                   → Plan du site pour l’indexation
      ├── hero_loader.js                → Script d’initialisation du contenu hebdomadaire
