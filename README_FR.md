@@ -89,31 +89,46 @@ mais interagit de manière contrôlée avec les autres.
 sereona/
 ├── core/
 │    │
-│    ├── data_counter.json             → Compteur de numérotation des factures
-│    ├── data_tokens.json              → Jetons temporaires liés aux téléchargements
-│    ├── data_config.json              → Fichier de configuration (anonymisé)
-│    ├── logs_reviews.json             → Journal des soumissions d’avis
-│    ├── engine_logs_cleaner.py        → Script de nettoyage des logs
-│    ├── engine_reviews_cleaner.py     → Script de nettoyage des avis
-│    ├── engine_emails_cleaner.py      → Script de nettoyage des mails
-│    ├── data_senders.json             → Suivi des réponses automatiques e-mail
-│    ├── payment-state.json            → Prévention des doublons de paiement
-│    ├── engine_downloads_cleaner.php  → Nettoyage des logs de téléchargements
-│    ├── engine_tokens_cleaner.php     → Nettoyage des jetons expirés
-│    ├── core_pdf.php                  → Fonctions de génération PDF
-│    ├── core_html.php                 → Fonctions utilitaires HTML
-│    ├── core_mail.php                 → Envoi automatique des factures par e-mail
-│    ├── core_engine.php               → Fonctions liées au compteur
+│    ├── download_tokens.json          → Jetons temporaires liés aux téléchargements
+│    ├── clean_system_logs.py          → Script de nettoyage des logs
+│    ├── clean_reviews_logs.py         → Script de nettoyage des avis
+│    ├── processed_email_states.json   → Suivi des réponses automatiques e-mail
+│    ├── cleanup_download_logs.php     → Nettoyage des logs de téléchargements
+│    ├── cleanup_expired_tokens.php    → Nettoyage des jetons expirés
 │    │
-│    ├── renderer/                     → Librairie de génération de PDF
-│    ├── invoices/                     → Factures générées
-│    ├── revenues/                     → Données de recettes
+│    ├── tmp/                          → Fichiers de contrôle / état
+│    ├── vendor/                       → Librairie de génération PDF
 │    ├── logs/                         → Journaux d’erreurs
+│    ├── payment-sdk/                  → SDK PHP officiel du prestataire de paiement
+│    ├── mailer/                       → Bibliothèque d’envoi d’e-mails
+│    │
+│    ├── data/
+│    │   ├── payments/                 → Archive des factures
+│    │   └── transactions/             → Journal des transactions
+│    │
+│    ├── config/
+│    │   ├── paths.php                 → Configuration des chemins internes
+│    │   ├── download_config.php       → Configuration centrale des téléchargements
+│    │   └── config.example.json       → Fichier de configuration exemple
+│    │
+│    ├── modules/
+│    │   ├── countries.php             → Données des pays
+│    │   ├── invoice_counter.json      → Compteur de numérotation des factures
+│    │   ├── invoice.php               → Orchestrateur de génération Factur-X
+│    │   ├── facturx_embed.py          → Injection du XML dans le PDF
+│    │   ├── generate_facturx_xml.php  → Génération du XML Factur-X
+│    │   ├── invoice_counter.php       → Fonctions liées au compteur de factures
+│    │   ├── invoice_mail.php          → Envoi automatique des factures par e-mail
+│    │   ├── invoice_html.php          → Fonctions de rendu HTML
+│    │   └── invoice_pdf.php           → Fonctions de génération PDF
+│    │
 │    └── docs/
-│        ├── GUIDE_CORE.md             → Vue d’ensemble du projet et de son architecture
-│        ├── SYSTEM.md                 → General overview of the project and its architecture
-│        ├── OPERATIONS.md             → Guide d’exploitation et de fonctionnement
-│        └── OVERVIEW.md               → Vue d’ensemble du système
+│        ├── README_FR.md              → Vue d’ensemble du projet et de son architecture (FR)
+│        ├── README.md                 → Vue d’ensemble du projet et de son architecture (EN)
+│        ├── OPERATIONS_FR.md          → Guide d’exploitation et de fonctionnement (FR)
+│        ├── OPERATIONS.md             → Guide d’exploitation et de fonctionnement (EN)
+│        ├── OVERVIEW_FR.md            → Vue d’ensemble du système (FR)
+│        └── OVERVIEW.md               → Vue d’ensemble du système (EN)
 │
 ├── assistant-node/
 │    ├── engine_main.py                → Point d’entrée du worker (cron / déclencheur PHP)
@@ -125,77 +140,73 @@ sereona/
 │    └── tmp/                          → Fichier de contrôle / état
 │
 └── web/
-     ├── pdf/
-     │    ├── template_document.html   → Modèle HTML de facture
-     │    ├── success.html             → Page affichée après paiement réussi
-     │    └── cancel.html              → Page affichée après paiement annulé
+     ├── library/
+     │    ├── invoice_template.php     → Modèle HTML de facture
+     │    ├── payment_success.html     → Page affichée après paiement réussi
+     │    └── payment_cancel.html      → Page affichée après paiement annulé
      │
-     ├── assets/                       → Feuilles de style (externe optionnel)
+     ├── payments/
+     │    ├── checkout.php             → Initialisation du paiement
+     │    ├── download.php             → Point d’entrée de téléchargement
+     │    └── payment_webhook.php      → Webhook de paiement
+     │
+     ├── assets/                       → Feuilles de style externes (optionnel)
      ├── pages/                        → Pages HTML du site (articles et contenus)
      ├── images/                       → Images du site (logos et favicons inclus)
-     ├── tmp/                          → Fichier de contrôle / état
-     ├── dl/                           → Store
+     ├── tmp/                          → Fichiers de contrôle / état
+     ├── products/                     → Catalogue produits
      │
      ├── LICENCE.md                    → Conditions d’utilisation et cadre légal
      │
      ├── site.webmanifest              → Manifest PWA du site
      ├── index.html                    → Page d’accueil
-     ├── gateway.php                   → Webhook de paiement
-     ├── reviews.php                   → Gestionnaire d’envoi d’avis
-     ├── download.php                  → Point d’entrée de téléchargement
-     ├── payment-init.php              → Initialisation du paiement
+     ├── submit_review.php             → Gestionnaire d’envoi des avis
      ├── robots.txt                    → Règles d’indexation pour les moteurs de recherche
      ├── sitemap.xml                   → Plan du site pour l’indexation
-     ├── hero_loader.js                → Script d’initialisation du contenu hebdomadaire
-     ├── messages-2025.js              → Données hebdomadaires – année 2025
-     └── messages-2026.js              → Données hebdomadaires – année 2026
+     ├── index_hero.js                 → Script d’initialisation du contenu hebdomadaire
+     ├── weekly-content-2025.js        → Données de contenu hebdomadaire — année 2025
+     └── weekly-content-2026.js        → Données de contenu hebdomadaire — année 2026
 ```
 
 
 ---
 
-### `sereona.fr/` — site public statique, incluant des points d’entrée serveur protégés
+### sereona.fr — site public et points d’entrée serveur
 
-Ce dossier contient exclusivement le site public : [Sereona](https://sereona.fr)
+Ce dossier contient la partie visible du site et les points d’entrée serveur contrôlés.
 
-Il s’agit d’un site statique composé de fichiers HTML indépendants,  
-accompagnés de feuilles de style et de scripts JavaScript légers.  
-Aucune logique serveur critique n’est exposée depuis cette couche.
+Il regroupe les ressources publiques, les pages accessibles aux utilisateurs et les scripts nécessaires aux opérations spécifiques.
 
-Le site public est le seul point de contact avec le navigateur.  
-Il ne stocke aucune donnée sensible et ne dépend d’aucun service externe.
+Aucune donnée sensible ni logique métier critique n’est stockée dans cette couche.
 
----
-
-### `core/` — zone technique exposée minimale
-
-Ce dossier contient l'ensemble de la logique serveur privée :  
-scripts de traitement, bibliothèques PHP, données JSON,  
-factures générées et journaux internes.
-
-Il n'est jamais exposé publiquement et n'est accessible  
-qu'en interne, depuis les scripts et tâches planifiées.
+Le site public constitue le point de contact principal avec les utilisateurs, tandis que les traitements importants restent isolés dans la couche serveur privée.
 
 ---
 
-### `assistant-node/` — traitements internes asynchrones
+### core/ — logique serveur privée
 
-Le dossier `assistant-node/` contient exclusivement les traitements internes  
-exécutés en arrière-plan.
+Ce dossier contient la couche applicative interne.
 
-Il correspond à la partie bot / assistant / automatisation Python  
-du système et n’est jamais exposé publiquement.
+Il regroupe les traitements serveur, la gestion des paiements, la génération des factures, le traitement Factur-X, les téléchargements sécurisés, les bibliothèques internes et les données opérationnelles.
 
-Les scripts sont déclenchés uniquement via :  
+Cette zone n’est pas exposée publiquement et est uniquement utilisée par des traitements serveur contrôlés.
+
+---
+
+### assistant-node/ — couche d’automatisation interne
+
+Ce dossier contient les traitements internes exécutés en arrière-plan.
+
+Il regroupe les tâches d’automatisation, les opérations planifiées et les traitements asynchrones.
+
+L’exécution repose uniquement sur :
 
 - des tâches planifiées (Cron)  
-- des appels serveur internes contrôlés
+- des appels internes serveur contrôlés
 
-Aucun serveur Python, aucune API publique  
-et aucun runtime persistant ne sont utilisés.
+Aucune API publique, aucun serveur persistant ni aucun service externe exposé n’est utilisé.
 
-Ce choix permet de conserver une architecture silencieuse,  
-maîtrisée et adaptée à un hébergement mutualisé.
+Cette approche permet de conserver une architecture légère, maîtrisée et adaptée à un environnement d’hébergement simple.
 
 ---
 
@@ -291,48 +302,84 @@ prévisible et respectueuse des contraintes de sécurité et de conformité.
 
 ## 3. Paiement, facturation et distribution
 
-Le projet intègre un système de paiement et de distribution  
-entièrement géré côté serveur, sans intermédiaire d’automatisation externe.
+Le projet intègre une chaîne complète de paiement, facturation et distribution entièrement maîtrisée côté serveur.
 
-Le prestataire de paiement est utilisé exclusivement pour le traitement transactionnel,  
-la logique de facturation et de distribution reste sous contrôle serveur.
+Le prestataire de paiement intervient uniquement pour la validation transactionnelle.
 
-### Pipeline général
+Toute la logique métier associée au paiement est ensuite gérée par l’infrastructure Sereona :
 
-- déclenchement du paiement via une page dédiée  
-- réception et traitement des événements serveur  
-- génération automatique des factures au format PDF  
-- attribution d’un numéro de facture unique et séquentiel  
-- classement automatique des documents par année et par mois  
-- préparation des accès de téléchargement sécurisés
+- traitement des événements de paiement  
+- génération automatique des factures  
+- numérotation des documents  
+- archivage des pièces comptables  
+- envoi des documents au client  
+- gestion des accès aux produits numériques
 
-L’ensemble du processus est automatisé et ne dépend  
-d’aucune plateforme tierce d’orchestration.
+L’objectif est de conserver une architecture autonome, où le paiement ne dépend pas d’un système d’automatisation externe.
 
-### Distribution sécurisée des fichiers
+---
 
-La distribution des fichiers numériques repose sur un moteur interne dédié,  
-conçu pour éviter toute exposition directe des ressources.
+## Pipeline général
 
-Les fichiers ne sont jamais accessibles par URL publique.  
-L’accès est conditionné à des liens temporaires à usage unique,  
-générés dynamiquement après validation côté serveur.
+Le parcours complet repose sur plusieurs étapes contrôlées :
 
-Les contrôles mis en place incluent notamment :  
+- validation du paiement  
+- confirmation serveur de la transaction  
+- génération automatique de la facture électronique  
+- attribution d’un numéro unique et séquentiel  
+- création du document Factur-X  
+- archivage automatique des factures  
+- transmission de la facture au client  
+- création d’un accès sécurisé au produit numérique
 
-- expiration automatique des accès  
-- validation du contexte de téléchargement  
-- contrôle d’intégrité des accès  
-- invalidation immédiate après usage  
-- journalisation horodatée des accès effectifs
+La facturation et la distribution restent entièrement sous contrôle de l’infrastructure Sereona.
 
-Le système permet également de distinguer  
-une simple consultation de lien  
-d’un téléchargement réellement effectué,  
-avec notification côté administration.
+---
 
-L’ensemble du mécanisme fonctionne sans service tiers  
-et sans exposition de logique sensible côté site public.
+## Facturation Factur-X
+
+Les factures sont générées automatiquement au format Factur-X.
+
+Le système associe :
+
+- les données métier de facturation  
+- le rendu visuel PDF  
+- les données structurées XML embarquées
+
+Chaque facture produite constitue un document complet contenant à la fois sa représentation lisible et ses données structurées nécessaires au traitement électronique.
+
+L’archivage est organisé automatiquement afin de faciliter :
+
+- la conservation des documents  
+- la maintenance du système  
+- la consultation administrative
+
+---
+
+## Distribution sécurisée des fichiers
+
+La distribution des produits numériques repose sur un système interne de téléchargement sécurisé.
+
+Les ressources ne sont jamais exposées directement depuis le site public.
+
+Après validation du paiement, un accès temporaire est généré avec :
+
+- un contrôle d’autorisation côté serveur  
+- une durée de validité limitée  
+- une protection contre les accès non autorisés  
+- une invalidation après utilisation  
+- une traçabilité des accès
+
+Le téléchargement est effectué uniquement après validation des droits associés à la commande.
+
+Cette architecture permet de séparer clairement :
+
+- le site public  
+- le traitement transactionnel  
+- la facturation électronique  
+- les ressources numériques protégées
+
+L’ensemble fonctionne sans plateforme d’orchestration externe et conserve la logique sensible côté serveur.
 
 ---
 
