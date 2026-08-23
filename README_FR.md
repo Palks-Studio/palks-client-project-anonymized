@@ -92,6 +92,7 @@ sereona/
 │    ├── download_tokens.json          → Jetons temporaires liés aux téléchargements
 │    ├── clean_system_logs.py          → Script de nettoyage des logs
 │    ├── clean_reviews_logs.py         → Script de nettoyage des avis
+│    ├── cleanup.py                    → Script de nettoyage des logs
 │    ├── processed_email_states.json   → Suivi des réponses automatiques e-mail
 │    ├── cleanup_download_logs.php     → Nettoyage des logs de téléchargements
 │    ├── cleanup_expired_tokens.php    → Nettoyage des jetons expirés
