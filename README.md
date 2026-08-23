@@ -83,110 +83,124 @@ Each subsystem is logically independent but interacts in a controlled manner wit
 sereona/
 ├── core/
 │    │
-│    ├── data_counter.json             → Invoice numbering counter
-│    ├── data_tokens.json              → Temporary download tokens
-│    ├── data_config.json              → Configuration file (anonymized)
-│    ├── logs_reviews.json             → Review submission logs
-│    ├── engine_logs_cleaner.py        → Log cleanup script
-│    ├── engine_reviews_cleaner.py     → Review cleanup script
-│    ├── engine_emails_cleaner.py      → Email cleanup script
-│    ├── data_senders.json             → Email auto-reply tracker
-│    ├── payment-state.json            → Payment duplicate prevention
-│    ├── engine_downloads_cleaner.php  → Download log cleanup
-│    ├── engine_tokens_cleaner.php     → Expired token cleanup
-│    ├── core_pdf.php                  → PDF generation functions
-│    ├── core_html.php                 → HTML utility functions
-│    ├── core_mail.php                 → Automatic invoice email delivery
-│    ├── core_engine.php               → Counter-related functions
+│    ├── download_tokens.json          → Temporary tokens related to downloads
+│    ├── clean_system_logs.py          → Log cleanup script
+│    ├── clean_reviews_logs.py         → Review cleanup script
+│    ├── processed_email_states.json   → Automated email response tracking
+│    ├── cleanup_download_logs.php     → Download log cleanup
+│    ├── cleanup_expired_tokens.php    → Expired token cleanup
 │    │
-│    ├── renderer/                     → PDF generation library
-│    ├── invoices/                     → Generated invoices
-│    ├── revenues/                     → Revenue data
+│    ├── tmp/                          → Control / state files
+│    ├── vendor/                       → PDF generation library
 │    ├── logs/                         → Error logs
+│    ├── payment-sdk/                  → Official payment PHP SDK
+│    ├── mailer/                       → Email delivery library
+│    │
+│    ├── data/
+│    │   ├── payments/                 → Invoice archive
+│    │   └── transactions/             → Transaction records
+│    │
+│    ├── config/
+│    │   ├── paths.php                 → Internal paths configuration
+│    │   ├── download_config.php       → Central download configuration
+│    │   └── config.example.json       → Example configuration file
+│    │
+│    ├── modules/
+│    │   ├── countries.php             → Country data
+│    │   ├── invoice_counter.json      → Invoice numbering counter
+│    │   ├── invoice.php               → Factur-X generation orchestrator
+│    │   ├── facturx_embed.py          → XML injection into PDF
+│    │   ├── generate_facturx_xml.php  → Factur-X XML generation
+│    │   ├── invoice_counter.php       → Invoice counter functions
+│    │   ├── invoice_mail.php          → Automatic invoice email delivery
+│    │   ├── invoice_html.php          → HTML rendering utilities
+│    │   └── invoice_pdf.php           → PDF generation functions
+│    │
 │    └── docs/
-│        ├── GUIDE_CORE.md             → Project and architecture overview
-│        ├── SYSTEM.md                 → General overview of the project and its architecture
-│        ├── OPERATIONS.md             → Operations and usage guide
-│        └── OVERVIEW.md               → System overview
+│        ├── README_FR.md              → Project overview and architecture (FR)
+│        ├── README.md                 → Project overview and architecture (EN)
+│        ├── OPERATIONS_FR.md          → Operations and maintenance guide (FR)
+│        ├── OPERATIONS.md             → Operations and maintenance guide (EN)
+│        ├── OVERVIEW_FR.md            → System overview (FR)
+│        └── OVERVIEW.md               → System overview (EN)
 │
 ├── assistant-node/
-│    ├── engine_main.py                → Worker entry point (cron / PHP trigger)
-│    ├── engine_core.py                → Main worker logic
-│    ├── engine_reply.py               → Automated processing
-│    ├── engine_purge.py               → Log maintenance
-│    ├── bridge.php                    → PHP → Python bridge
-│    ├── data/                         → Worker data source
-│    └── tmp/                          → Control / state file
+│    ├── engine_main.py                → Point d’entrée du worker (cron / déclencheur PHP)
+│    ├── engine_core.py                → Logique principale du worker
+│    ├── engine_reply.py               → Traitement automatisé
+│    ├── engine_purge.py               → Maintenance des journaux
+│    ├── bridge.php                    → Pont PHP → Python
+│    ├── data/                         → Source de données du worker
+│    └── tmp/                          → Fichier de contrôle / état
 │
 └── web/
-     ├── pdf/
-     │    ├── template_document.html   → Invoice HTML template
-     │    ├── success.html             → Page displayed after successful payment
-     │    └── cancel.html              → Page displayed after canceled payment
+     ├── library/
+     │    ├── invoice_template.php     → Invoice HTML template
+     │    ├── payment_success.html     → Page displayed after successful payment
+     │    └── payment_cancel.html      → Page displayed after cancelled payment
      │
-     ├── assets/                       → Stylesheets (optional external)
-     ├── pages/                        → Website pages (articles and content)
+     ├── payments/
+     │    ├── checkout.php             → Payment initialization
+     │    ├── download.php             → Download entry point
+     │    └── payment_webhook.php      → Payment webhook
+     │
+     ├── assets/                       → External stylesheets (optional)
+     ├── pages/                        → Website HTML pages (articles and content)
      ├── images/                       → Website images (including logos and favicons)
-     ├── tmp/                          → Control / state file
-     ├── dl/                           → Store
+     ├── tmp/                          → Control / state files
+     ├── products/                     → Product store
      │
-     ├── LICENCE.md                    → Terms of use and legal framework
+     ├── LICENCE.md                    → Usage conditions and legal framework
      │
      ├── site.webmanifest              → Website PWA manifest
-     ├── index.html                    → Homepage
-     ├── gateway.php                   → Payment webhook
-     ├── reviews.php                   → Review submission handler
-     ├── download.php                  → Download entry point
-     ├── payment-init.php              → Payment initialization
+     ├── index.html                    → Home page
+     ├── submit_review.php             → Review submission handler
      ├── robots.txt                    → Search engine indexing rules
-     ├── sitemap.xml                   → Sitemap for indexing
-     ├── hero_loader.js                → Weekly content initialization script
-     ├── messages-2025.js              → Weekly data – year 2025
-     └── messages-2026.js              → Weekly data – year 2026
+     ├── sitemap.xml                   → Website sitemap for indexing
+     ├── index_hero.js                 → Weekly content initialization script
+     ├── weekly-content-2025.js        → Weekly content data — year 2025
+     └── weekly-content-2026.js        → Weekly content data — year 2026
 ```
 
 
 ---
 
-### `sereona.fr/` — Public Layer
+### sereona.fr — public website and server entry points
 
-This folder contains exclusively the public site: [Sereona](https://sereona.fr)
+This directory contains the public-facing website and its controlled server entry points.
 
-It is a static website composed of independent HTML files, accompanied by lightweight CSS stylesheets and JavaScript scripts.  
-No critical server-side logic is exposed from this layer.
+It includes the static website resources, user-facing pages and limited PHP endpoints required for specific operations.
 
-The public site is the only point of contact with the browser.  
-It does not store any sensitive data and does not depend on any external services.
+No sensitive data or private business logic is stored in this layer.
 
-Although certain server-side scripts are physically located within this directory,  
-they are never directly accessible and are strictly protected by server-level rules.
+The public website is the main interaction point with users, while critical processing remains isolated in the private server layer.
 
 ---
 
-### `core/` — Minimal Exposed Technical Layer
+### core/ — private server logic
 
-This folder contains the entire private server logic:  
-processing scripts, PHP libraries, JSON data,  
-generated invoices and internal logs.
+This directory contains the internal application layer.
 
-It is never publicly exposed and is only accessible  
-internally, from scripts and scheduled tasks.
+It includes server-side processing, payment handling, invoice generation, Factur-X processing, secure downloads, internal libraries and operational data.
+
+This area is not publicly exposed and is only accessed through controlled server-side execution.
 
 ---
 
-### `assistant-node/` — Internal Automation
+### assistant-node/ — internal automation layer
 
-The `assistant-node/` folder contains internal processes that run in the background, with no public exposure.  
-These scripts are triggered solely via scheduled tasks or internal server calls.
+This directory contains internal background processes.
 
-They handle, among other things:  
+It handles automation tasks, scheduled operations and asynchronous processing.
 
-- automation of specific operations  
-- log maintenance  
-- temporary file cleanup  
-- management of locally stored internal data
+Execution is limited to:
 
-This choice eliminates the need for an exposed backend and maintains a silent, controlled architecture.
+- scheduled tasks (Cron)  
+- controlled internal server calls
+
+No public API, persistent runtime or external service is exposed.
+
+This approach keeps the architecture lightweight, controlled and compatible with a simple hosting environment.
 
 ---
 
@@ -261,42 +275,86 @@ predictable architecture that respects security and compliance constraints.
 
 ---
 
-## 3. Payment, Invoicing, and Distribution
+## 3. Payment, invoicing and distribution
 
-The project integrates a payment and distribution system fully managed server-side,  
-without relying on any external automation intermediaries.
-Payments are initiated via a dedicated provider and then processed by internal scripts triggered by events.  
-No sensitive data is stored on the public site.
+The project integrates a complete payment, invoicing and distribution pipeline fully controlled on the server side.
 
-### General Pipeline
+The payment provider is only used for transaction validation.
 
-- Payment triggered via a dedicated page  
-- Reception and processing of server events  
-- Automatic generation of invoices in PDF format  
-- Assignment of a unique, sequential invoice number  
-- Automatic filing of documents by year and month  
-- Preparation of secure download access
+All business logic related to payments is then handled by the Sereona infrastructure:
 
-The entire process is automated and does not depend on any third-party orchestration platform.
+- payment event processing  
+- automatic invoice generation  
+- document numbering  
+- invoice archiving  
+- customer document delivery  
+- digital product access management
 
-### Secure File Distribution
+The goal is to maintain an autonomous architecture where payment processing does not depend on any external automation system.
 
-The distribution of digital files relies on a dedicated internal engine,  
-designed to avoid any direct exposure of resources.  
-Files are never accessible via public URLs. Access is conditioned on temporary one-time use links,  
-generated dynamically after server-side validation.
+---
 
-The implemented controls include, notably:  
+## General pipeline
 
-- Automatic expiration of access  
-- Validation of the download context  
-- Access integrity checks  
-- Immediate invalidation after use  
-- Timestamped logging of actual accesses
+The complete workflow relies on several controlled steps:
 
-The system also distinguishes between a simple link consultation and an actual download,  
-with notifications sent to the administration side.
-The entire mechanism works without third-party services and without exposing any sensitive logic on the public site.
+- payment validation  
+- server-side transaction confirmation  
+- automatic electronic invoice generation  
+- assignment of a unique sequential number  
+- Factur-X document creation  
+- automatic invoice archiving  
+- invoice delivery to the customer  
+- creation of secure access to the digital product
+
+Invoicing and distribution remain entirely controlled by the Sereona infrastructure.
+
+---
+
+## Factur-X invoicing
+
+Invoices are automatically generated in Factur-X format.
+
+The system combines:
+
+- invoice business data  
+- visual PDF rendering  
+- embedded structured XML data
+
+Each generated invoice is a complete document containing both a human-readable representation and structured data required for electronic processing.
+
+The archive system is automatically organized to simplify:
+
+- document retention  
+- system maintenance  
+- administrative access
+
+---
+
+## Secure file distribution
+
+Digital product delivery relies on an internal secure download system.
+
+Resources are never directly exposed through the public website.
+
+After payment validation, a temporary access is generated with:
+
+- server-side authorization checks  
+- limited validity period  
+- protection against unauthorized access  
+- invalidation after use  
+- access traceability
+
+Downloads are only processed after validating the rights associated with the purchase.
+
+This architecture provides a clear separation between:
+
+- public website  
+- transaction processing  
+- electronic invoicing  
+- protected digital resources
+
+The entire system operates without external orchestration platforms and keeps sensitive logic under server-side control.
 
 ---
 
