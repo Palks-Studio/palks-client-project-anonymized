@@ -86,6 +86,7 @@ sereona/
 │    ├── download_tokens.json          → Temporary tokens related to downloads
 │    ├── clean_system_logs.py          → Log cleanup script
 │    ├── clean_reviews_logs.py         → Review cleanup script
+│    ├── cleanup.py                    → Log cleanup script
 │    ├── processed_email_states.json   → Automated email response tracking
 │    ├── cleanup_download_logs.php     → Download log cleanup
 │    ├── cleanup_expired_tokens.php    → Expired token cleanup
